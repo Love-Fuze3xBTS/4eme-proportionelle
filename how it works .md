@@ -10,6 +10,8 @@ _________________________
 - 3 : Demander à quelle ligne appartient la valeur connue de la colonne qu'on veut calculer
     - Demander cette valeur
 - 4 : Calculer lignes après lignes les valeurs de la 2ème colonne.
+    - Calculer le coef de proportionalité
+    - En déduire les autre valeurs
 - 5 : Afficher le(s) résultat(s)
     
     Ex:
