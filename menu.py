@@ -57,7 +57,54 @@ for a in range (nb_lines):
 print('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
 
 # _______________________________________étape n°5_______________________________________:
+taille_max = len(str(liste_valeur_col_1[0]))
+taille_max_noms_grandeurs = len(noms_grandeurs[0])
+
 for a in range (nb_lines):
-    print(f' ◊ {noms_grandeurs[a]}:\n\t col 1 ≈ {liste_valeur_col_1[a]}\n\t col 2 ≈ {liste_val_col2_calculées[a]}\n━━━━━━━━━━━━━━━')
+    if len(str(liste_valeur_col_1[a])) > taille_max:
+        taille_max = len(str(liste_valeur_col_1[a]))
+    
+    if len(str(liste_val_col2_calculées[a])) > taille_max:
+        taille_max = len(str(liste_val_col2_calculées[a]))
+
+    if len(noms_grandeurs[a]) > taille_max_noms_grandeurs:
+        taille_max_noms_grandeurs = len(noms_grandeurs[a])
+
+taille_max = taille_max + 2
+taille_max = int(taille_max/2)
+
+titre_colonne1 = " Colone n°1 "
+titre_colonne2 = " Colone n°2 "
+if len(titre_colonne1) != taille_max*2:
+    taille_col1 = len(titre_colonne1)
+
+    taille_col1 = int(taille_col1/2)
+
+    taille_col1 = taille_max*2 - taille_col1
+
+    titre_colonne1 = " " * taille_col1 + titre_colonne1 + " "*taille_col1
+    titre_colonne2 = " " * taille_col1 + titre_colonne2 + " "*taille_col1
+
+if taille_max < len(titre_colonne1):
+    taille_max = int(len(titre_colonne1)/2)
+
+print(" "*taille_max_noms_grandeurs+"  ║"+titre_colonne1+" ║"+titre_colonne2)
+
+for a in range(nb_lines):
+    print("═"*taille_max_noms_grandeurs+"══""╬"+"═"*taille_max*2+"═╬"+"═"*taille_max*2)
+
+    col1_len = len(str(liste_valeur_col_1[a]))
+    col2_len = len(str(liste_val_col2_calculées[a]))
+    grandeur_len = len(noms_grandeurs[a])
+
+    col1_len = int(col1_len/2)
+    col2_len = int(col2_len/2)
+    grandeur_len = int(grandeur_len/2)
+
+    col1_len = taille_max-col1_len
+    col2_len = taille_max-col2_len
+    grandeur_len = int(taille_max_noms_grandeurs/2)-grandeur_len
+
+    print(" "*grandeur_len+noms_grandeurs[a]+" "*grandeur_len+"  ║"+" "*col1_len+str(liste_valeur_col_1[a])+" "*col1_len+"║"+" "*col2_len+str(liste_val_col2_calculées[a])+" "*col2_len)
 
 time.sleep(8)

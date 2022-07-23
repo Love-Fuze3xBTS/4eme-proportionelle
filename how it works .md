@@ -4,7 +4,7 @@ _________________________
 ----
 --
 
-- 1 : Demander combien il y a de lignes
+- 1 : Demander combien il y a de lignes dans le tableau
     - Donner des noms aux grandeurs et les grandeurs.
 - 2 : Demander les valeurs de la 1ère colonne
 - 3 : Demander à quelle ligne appartient la valeur connue de la colonne qu'on veut calculer
